@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:speak_it_right/providers/speech_notifier.dart';
 
-class PitchSlider extends StatelessWidget {
-  final double pitchValue;
-  final ValueChanged<double> onChanged;
-
-  const PitchSlider({super.key, this.pitchValue = 1, required this.onChanged});
+class PitchSlider extends ConsumerWidget {
+  const PitchSlider({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final pitchValue = ref.watch(
+      speechNotifierProvider.select((state) => state.pitch),
+    );
+    final onChanged = ref.read(speechNotifierProvider.notifier).updatePitch;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

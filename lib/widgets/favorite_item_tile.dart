@@ -1,16 +1,17 @@
+// favorite_item_tile.dart
 import 'package:flutter/material.dart';
 
 class FavoriteItemTile extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+  final VoidCallback onFavoriteTap;
+
   const FavoriteItemTile({
     super.key,
     required this.text,
     required this.onTap,
     required this.onFavoriteTap,
   });
-
-  final String text;
-  final VoidCallback onTap;
-  final VoidCallback onFavoriteTap;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,6 @@ class FavoriteItemTile extends StatelessWidget {
               ),
             ),
           ),
-
           IconButton(
             icon: const Icon(Icons.star, color: Colors.amber),
             onPressed: onFavoriteTap,
