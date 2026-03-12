@@ -1,16 +1,55 @@
-# speak_it_right
+Speak It Right 🗣️
 
-A new Flutter project.
+Description:
+A Flutter app/feature demonstrating Text-to-Speech (TTS) with Riverpod state management. Users can type text, adjust pitch and speed, select a voice, and save their favorite phrases. Ideal as a learning project for practicing Flutter widgets, state management, and TTS integration.
 
-## Getting Started
+Features ✅
 
-This project is a starting point for a Flutter application.
+Input text for speech.
 
-A few resources to get you started if this is your first Flutter project:
+Adjust speech speed and pitch with sliders.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Select voice from available TTS options.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Save favorite phrases and replay them.
+
+Play/Pause TTS.
+
+Fully implemented using Riverpod for state management.
+
+Screenshots / Demo 🎬
+
+(Insert screenshots or record a short video GIF showing input, sliders, dropdown, and TTS in action.)
+
+
+Getting Started 🚀
+Prerequisites
+
+Flutter SDK >= 3.0
+
+Dart >= 2.18
+
+Installation
+
+1-Clone the repo:
+git clone https://github.com/your-username/speak_it_right.git
+2-Install dependencies:
+flutter pub get
+3-Run the app:
+flutter run
+
+
+Packages Used 📦
+
+-flutter_riverpod – state management
+
+-flutter_tts – text-to-speech
+
+How it Works 🛠️
+
+Riverpod manages SpeechState (text, pitch, speed, voice, favorites, isSpeaking).
+
+SpeechNotifier updates state and triggers TTS playback.
+
+UI widgets (PitchSlider, SpeedSlider, VoiceDropdown, SpeakButton) watch state and rebuild on changes.
+ 
