@@ -14,18 +14,23 @@ A Flutter app demonstrating **Text-to-Speech (TTS)** with **Riverpod** state man
 
 ---
 
-## Screenshots / Demo 🎬
-*(Insert screenshots or a short GIF showing the app in action with text input, sliders, dropdown, and TTS playback)*
-
----
-
 ## Getting Started 🚀
 
 ### Prerequisites
 - Flutter SDK >= 3.0
 - Dart >= 2.18
+### Packages Used 📦
 
-### Installation
-1. Clone the repo:  
-```bash
-git clone https://github.com/RwanHossamEldein/speak_it_right.git
+- flutter_riverpod – state management
+
+- flutter_tts – text-to-speech
+- 
+ ### How it Works 🛠️
+ 
+- Riverpod manages SpeechState containing:
+text, pitch, speed, voice, favorites, isSpeaking
+
+- SpeechNotifier updates the state and triggers TTS playback
+
+- UI widgets like PitchSlider, SpeedSlider, VoiceDropdown, and SpeakButton watch the state and rebuild on changes
+
