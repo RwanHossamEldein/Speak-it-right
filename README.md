@@ -24,7 +24,7 @@ A Flutter app demonstrating **Text-to-Speech (TTS)** with **Riverpod** state man
 - flutter_riverpod – state management
 
 - flutter_tts – text-to-speech
-- 
+  
  ### How it Works 🛠️
  
 - Riverpod manages SpeechState containing:
