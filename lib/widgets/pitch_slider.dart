@@ -14,9 +14,22 @@ class PitchSlider extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Pitch : ${pitchValue.toStringAsFixed(1)}"),
+        Text(
+          "Pitch : ${pitchValue.toStringAsFixed(1)}",
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 255, 254, 254),
+          ),
+        ),
 
-        Slider(min: 0.5, max: 2, value: pitchValue, onChanged: onChanged),
+        Slider(
+          min: 1,
+          max: 2,
+          value: pitchValue,
+          onChanged: onChanged,
+          activeColor: Color(Colors.white.value),
+        ),
       ],
     );
   }

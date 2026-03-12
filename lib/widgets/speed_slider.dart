@@ -13,7 +13,14 @@ class SpeedSlider extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Speed : ${speedValue.toStringAsFixed(1)}"),
+        Text(
+          "Speed : ${speedValue.toStringAsFixed(1)}",
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 255, 254, 254),
+          ),
+        ),
 
         Slider(
           min: 0.5,
@@ -21,6 +28,7 @@ class SpeedSlider extends ConsumerWidget {
           value: speedValue,
           onChanged: (value) =>
               ref.read(speechNotifierProvider.notifier).updateSpeed(value),
+          activeColor: Color(Colors.white.value),
         ),
       ],
     );

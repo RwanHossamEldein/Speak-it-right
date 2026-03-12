@@ -16,12 +16,19 @@ class SpeechPage extends ConsumerWidget {
       speechNotifierProvider.select((state) => state.isSpeaking),
     );
     return Scaffold(
-      backgroundColor: const Color(0xffF8FAFC),
+      backgroundColor: const Color.fromARGB(255, 12, 26, 41),
       appBar: AppBar(
-        title: const Text("Speak It Right"),
+        backgroundColor: const Color.fromARGB(255, 12, 26, 41),
+        title: const Text(
+          "Speak It Right",
+          style: TextStyle(color: Colors.white),
+        ),
         actions: [
           IconButton(
-            icon: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
+            icon: Icon(
+              isSpeaking ? Icons.pause : Icons.play_arrow,
+              color: Colors.white,
+            ),
 
             onPressed: () {
               final notifier = ref.read(speechNotifierProvider.notifier);

@@ -15,8 +15,15 @@ class VoiceDropdown extends ConsumerWidget {
     );
 
     return DropdownButton<String>(
+      dropdownColor: const Color.fromARGB(255, 12, 26, 41),
+
       items: items
-          .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+          .map(
+            (e) => DropdownMenuItem(
+              value: e,
+              child: Text(e, style: TextStyle(color: Colors.white)),
+            ),
+          )
           .toList(),
       onChanged: (value) {
         if (value != null) {
