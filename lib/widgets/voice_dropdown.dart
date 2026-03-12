@@ -13,17 +13,19 @@ class VoiceDropdown extends ConsumerWidget {
     final value = ref.watch(
       speechNotifierProvider.select((state) => state.voice),
     );
-    final onChanged = ref.read(speechNotifierProvider.notifier).updateVoice;
 
     return DropdownButton<String>(
       items: items
           .map((e) => DropdownMenuItem(value: e, child: Text(e)))
           .toList(),
       onChanged: (value) {
-        if (value != null) onChanged(value);
+        if (value != null) {
+          ref.read(speechNotifierProvider.notifier).updateVoice(value);
+          // Removed auto-speak; user presses Speak button now
+        }
       },
-      value: value,
-      hint: Text("Language & Voice"),
+      value: items.contains(value) ? value : null,
+      hint: const Text("Language & Voice"),
       borderRadius: BorderRadius.circular(20),
     );
   }

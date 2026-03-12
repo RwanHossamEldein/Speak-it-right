@@ -39,7 +39,7 @@ class FavoriteItemTile extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.star, color: Colors.amber),
-            onPressed: onFavoriteTap,
+            onPressed: () => onFavoriteTap(),
           ),
         ],
       ),

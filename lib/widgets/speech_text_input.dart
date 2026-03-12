@@ -15,6 +15,9 @@ class SpeechTextInput extends ConsumerWidget {
         ..selection = TextSelection.fromPosition(
           TextPosition(offset: text.length),
         ),
+      onChanged: (value) {
+        ref.read(speechNotifierProvider.notifier).updateText(value);
+      },
 
       maxLines: 6,
       decoration: InputDecoration(
@@ -24,7 +27,7 @@ class SpeechTextInput extends ConsumerWidget {
         suffixIcon: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () {
-            ref.read(speechNotifierProvider.notifier).updateText(text);
+            ref.read(speechNotifierProvider.notifier).updateText('');
           },
         ),
         border: OutlineInputBorder(

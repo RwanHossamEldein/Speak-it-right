@@ -24,7 +24,13 @@ class SpeechPage extends ConsumerWidget {
             icon: Icon(isSpeaking ? Icons.pause : Icons.play_arrow),
 
             onPressed: () {
-              ref.read(speechNotifierProvider.notifier).toggleIsSpeaking();
+              final notifier = ref.read(speechNotifierProvider.notifier);
+
+              if (isSpeaking) {
+                notifier.stop();
+              } else {
+                notifier.speak();
+              }
             },
           ),
         ],
@@ -46,7 +52,11 @@ class SpeechPage extends ConsumerWidget {
 
             const Spacer(),
 
-            SpeakButton(onPressed: () {}),
+            SpeakButton(
+              onPressed: () {
+                ref.read(speechNotifierProvider.notifier).speak();
+              },
+            ),
           ],
         ),
       ),
